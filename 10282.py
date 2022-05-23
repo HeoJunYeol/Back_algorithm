@@ -8,12 +8,12 @@ def dij(start):
     queue = []
     heapq.heappush(queue, [distances[start],start])
     while queue:
-        current_distance, current_destnation = heapq.heappop(queue)
+        current_distance, current_destination = heapq.heappop(queue)
 
-        if distances[current_destnation] < current_distance:
+        if distances[current_destination] < current_distance:
             continue
 
-        for new_destination, new_distance in dijkstra[current_destnation]:
+        for new_destination, new_distance in dijkstra[current_destination]:
             distance = current_distance + new_distance
             if distance < distances[new_destination] :
                 distances[new_destination] = distance
